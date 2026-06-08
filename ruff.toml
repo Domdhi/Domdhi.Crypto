@@ -1,0 +1,18 @@
+# Ruff config — the project's definition of "clean".
+# Run `ruff check` to lint, `ruff check --fix` to autofix, `ruff format` to format.
+line-length = 110
+target-version = "py311"
+
+[lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "W",   # pycodestyle warnings
+    "I",   # isort (import ordering)
+    "UP",  # pyupgrade (modern syntax)
+    "B",   # flake8-bugbear (likely bugs)
+]
+
+[lint.per-file-ignores]
+# Tests favour readability over a couple of lint niceties.
+"tests/*" = ["E501"]

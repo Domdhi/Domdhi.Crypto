@@ -1,0 +1,5 @@
+{
+  "build": { "command": ".venv/bin/ruff check src tests", "timeout": 300000 },
+  "test": { "command": ".venv/bin/pytest", "timeout": 600000 },
+  "stack": "python"
+}

@@ -1,0 +1,26 @@
+Domdhi.Crypto
+Copyright (c) Dom
+
+This product is licensed under the MIT License (see LICENSE).
+
+------------------------------------------------------------------------
+Third-party attributions
+------------------------------------------------------------------------
+
+The built-in factor library in `src/domdhi_crypto/factors.py`
+(`BUILTIN_FACTORS`) adapts factor definitions from:
+
+    HammerGPT
+    Licensed under the Apache License, Version 2.0.
+    https://www.apache.org/licenses/LICENSE-2.0
+
+The factor *expression strings* (e.g. trend, momentum, volatility, volume,
+and statistical factor formulas) were ported and re-homed onto this
+project's own pure-numpy/pandas primitive registry. No HammerGPT source
+code was copied; only the declarative factor definitions were adapted.
+
+Per Apache-2.0 §4, this NOTICE preserves attribution to the original
+work. The Apache License, Version 2.0 is available at the URL above. This
+project remains MIT-licensed; Apache-2.0 is a permissive license whose
+terms are compatible with redistribution under MIT provided the required
+notices (this file) are retained.

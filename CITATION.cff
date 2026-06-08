@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using these metadata."
+title: "domdhi.crypto"
+abstract: >-
+  A self-hosted crypto portfolio and technical-analysis engine that pulls data
+  from CoinGecko, stores it in local SQLite, computes indicators in pure
+  pandas/numpy, and renders an offline single-file HTML dashboard. No cloud,
+  no telemetry.
+type: software
+authors:
+  - name: "Domdhi"
+repository-code: "https://github.com/Domdhi/Domdhi.Crypto"
+url: "https://github.com/Domdhi/Domdhi.Crypto"
+license: MIT
+version: "0.1.0"
+date-released: "2026-06-05"
+keywords:
+  - cryptocurrency
+  - technical-analysis
+  - coingecko
+  - portfolio
+  - sqlite
+  - rsi
+  - macd

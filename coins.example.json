@@ -1,0 +1,10 @@
+{
+  "vs_currency": "usd",
+  "coins": [
+    { "id": "bitcoin",  "symbol": "BTC",  "amount": 0.5,   "avg_entry": 50000 },
+    { "id": "ethereum", "symbol": "ETH",  "amount": 5,     "avg_entry": 2500 },
+    { "id": "solana",   "symbol": "SOL",  "amount": 50,    "avg_entry": 120 },
+    { "id": "ripple",   "symbol": "XRP",  "amount": 1000,  "avg_entry": 0.60 },
+    { "id": "usd-coin", "symbol": "USDC", "amount": 1000,  "avg_entry": 1.00, "stable": true }
+  ]
+}

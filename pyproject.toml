@@ -1,0 +1,67 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "domdhi-crypto"
+version = "0.1.0"
+description = "Self-hosted crypto portfolio + technical-analysis engine (CoinGecko + SQLite + offline HTML dashboard)."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Dom" }]
+keywords = ["crypto", "cryptocurrency", "technical-analysis", "coingecko", "portfolio", "sqlite", "rsi", "macd"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+dependencies = [
+    "requests>=2.31",
+    "pandas>=2.0",
+    "numpy>=1.24",
+]
+
+# Optional MCP server extra. The core package stays at three runtime deps
+# (requests/pandas/numpy, ADR-001); the `mcp` SDK is only needed to run the
+# agent-facing server: `pip install domdhi-crypto[mcp]` then `domdhi-crypto mcp`.
+[project.optional-dependencies]
+mcp = ["mcp>=1.2"]
+
+[project.scripts]
+domdhi-crypto = "domdhi_crypto.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Domdhi/Domdhi.Crypto"
+Repository = "https://github.com/Domdhi/Domdhi.Crypto"
+Issues = "https://github.com/Domdhi/Domdhi.Crypto/issues"
+Changelog = "https://github.com/Domdhi/Domdhi.Crypto/blob/master/CHANGELOG.md"
+
+# PEP 735 dev dependency group — install with `uv sync` or `pip install --group dev`.
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.6",
+    "pre-commit>=3.7",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/domdhi_crypto", "src/domdhi_crypto_mcp"]
+
+# Vendored uPlot assets (ADR-009) are not .py files; force them into the wheel so
+# the dashboard can inline them after an installed `pip install`. They ship as
+# data, NOT as a runtime dependency (3-dep core preserved, ADR-007).
+[tool.hatch.build.targets.wheel.force-include]
+"src/domdhi_crypto/report/dashboard/vendor/uplot.min.js" = "domdhi_crypto/report/dashboard/vendor/uplot.min.js"
+"src/domdhi_crypto/report/dashboard/vendor/uplot.min.css" = "domdhi_crypto/report/dashboard/vendor/uplot.min.css"
+"src/domdhi_crypto/report/dashboard/vendor/README.md" = "domdhi_crypto/report/dashboard/vendor/README.md"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

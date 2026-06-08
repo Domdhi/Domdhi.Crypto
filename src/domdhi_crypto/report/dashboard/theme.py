@@ -1,0 +1,11 @@
+# GitHub-dark-ish palette
+BG = "#0d1117"
+CARD = "#161b22"
+BORDER = "#30363d"
+TEXT = "#c9d1d9"
+MUTED = "#8b949e"
+GREEN = "#3fb950"
+RED = "#f85149"
+BLUE = "#58a6ff"
+GOLD = "#d29922"
+PURPLE = "#bc8cff"
